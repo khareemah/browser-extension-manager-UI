@@ -18,7 +18,7 @@ export default function ExtensionCard({
   onChangeStatus,
 }: Props) {
   return (
-    <div className="w-full p-4.5 flex flex-col justify-between bg-[#fcfdff] rounded-md border border-[#d9dfeb] dark:bg-[#1f2535] dark:border-[#51566a] gap-7">
+    <div className="w-full h-full p-4.5 flex flex-col justify-between bg-[#fcfdff] rounded-md border border-[#d9dfeb] dark:bg-[#1f2535] dark:border-[#51566a] gap-7">
       <div className="w-full flex  items-start gap-4">
         <Image
           src={extension.logo}

@@ -62,7 +62,7 @@ export default function ExtensionList() {
 
       <div className="w-full">
         <motion.div
-          className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"
+          className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 "
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -74,6 +74,7 @@ export default function ExtensionList() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 * index }}
+              viewport={{ once: true }}
             >
               <ExtensionCard
                 extension={extension}
