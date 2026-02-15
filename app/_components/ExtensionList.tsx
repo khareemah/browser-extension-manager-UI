@@ -12,7 +12,7 @@ export default function ExtensionList() {
 
   const handleRemoveExtension = (name: string) => {
     return setExtensionsList(
-      extensionsList.filter((extension) => extension.name !== name)
+      extensionsList.filter((extension) => extension.name !== name),
     );
   };
 
@@ -23,7 +23,7 @@ export default function ExtensionList() {
           return { ...extension, isActive: !extension.isActive };
         }
         return extension;
-      })
+      }),
     );
   };
 
@@ -32,7 +32,7 @@ export default function ExtensionList() {
       ? true
       : activeStatus === "Active"
         ? extension.isActive
-        : !extension.isActive
+        : !extension.isActive,
   );
 
   return (
@@ -64,17 +64,15 @@ export default function ExtensionList() {
         <motion.div
           className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 "
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
         >
           {filteredExtensions.map((extension, index) => (
             <motion.div
               key={extension.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 * index }}
-              viewport={{ once: true }}
+              // initial={{ opacity: 0, y: 20 }}
+              // animate={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.6, delay: 0.2 * index }}
             >
               <ExtensionCard
                 extension={extension}
